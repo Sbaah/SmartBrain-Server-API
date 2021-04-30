@@ -33,7 +33,7 @@ app.use(cors());
 
 app.get('/', (req, res) => {
   // res.send(db.users);
-  res.json('Welcome !!!');
+  res.json('Welcome !!!, Test: email: james@gmail.com, password:james');
 });
 //  res.send('this is working');
 //   res.json(database.users);
