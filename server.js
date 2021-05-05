@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const knex = require('knex');
-// const sqlite3 = require('sqlite3').verbose();
+const sqlite3 = require('sqlite3').verbose();
 const bcrypt = require('bcrypt');
 const { response } = require('express');
 const saltRounds = 13;
@@ -31,10 +31,14 @@ const db = knex({
   // connect to your own database here
   client: 'pg',
   connection: {
-    host: 'rocky-ravine-80955',
-    user: 'sefa baah',
-    password: '',
-    database: 'smart-brain',
+    // host: 'rocky-ravine-80955',
+    // user: 'sefa baah',
+    // password: '',
+    // database: 'smart-brain',
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false,
+    },
   },
 });
 
