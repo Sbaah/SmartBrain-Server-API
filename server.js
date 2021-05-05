@@ -16,13 +16,26 @@ const register = require('./controllers/register');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
+// This is for Sqlite set up.
+// const db = knex({
+//   // Enter your own database information here based on what you created
+//   client: 'sqlite3',
+//   connection: {
+//     filename: smartBrainDB,
+//   },
+//   useNullAsDefault: true,
+// });
+
+// This is Postgres
 const db = knex({
-  // Enter your own database information here based on what you created
-  client: 'sqlite3',
+  // connect to your own database here
+  client: 'pg',
   connection: {
-    filename: smartBrainDB,
+    host: 'rocky-ravine-80955',
+    user: 'sefa baah',
+    password: '',
+    database: 'smart-brain',
   },
-  useNullAsDefault: true,
 });
 
 const app = express();
